@@ -1,3 +1,22 @@
+##### AOP记录日志
+
+```java
+package com.guo.blog.common.aop;
+
+import java.lang.annotation.*;
+
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface LogAnnotation {
+   String module() default  "";
+   String operator() default  "";
+
+}
+
+```
+
+```java
 package com.guo.blog.common.aop;
 
 import com.alibaba.fastjson.JSON;
@@ -63,3 +82,6 @@ public class LogAspect {
     }
 
 }
+
+```
+
